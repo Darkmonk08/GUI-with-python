@@ -1,0 +1,30 @@
+from tkinter import *
+
+def login():
+    print("logged in")
+
+root=Tk()
+root.geometry("800x600")
+root.config(background="yellow")
+root.title("window settings")
+
+username=Label(root,text="Username:",font=("Ariel",20))
+username.place(x=150,y=150)
+
+password=Label(root,text="Password:",font=("Ariel",20))
+password.place(x=150,y=280)
+
+usernametext=Entry(root,font=("Ariel",20))
+usernametext.place(x=300,y=150)
+
+passwordtext=Entry(root,font=("Ariel",20))
+passwordtext.place(x=300,y=280)
+
+button=Button(root,text="close", activebackground="red",background="white",command=root.destroy,width=20,height=3,font=("Ariel",10))
+button.place(x=500,y=500)
+
+loginbutton=Button(root,text="login", activebackground="red",background="white",width=20,height=3,font=("Ariel",10),command=login)
+loginbutton.place(x=150,y=500)
+
+
+root.mainloop()

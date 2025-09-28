@@ -1,0 +1,11 @@
+from tkinter import *
+
+root=Tk()
+root.geometry("800x800")
+root.config(background="yellow")
+root.title("window settings")
+
+button=Button(root,text="close", activebackground="red",background="white",command=root.destroy)
+button.pack(side="left")
+
+root.mainloop()
