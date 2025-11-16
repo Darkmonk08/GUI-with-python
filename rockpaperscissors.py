@@ -8,11 +8,29 @@ root.config(background="light grey")
 root.title("window settings")
 
 answeroptions=["Rock","Paper", "Scissors"]
+result=""
+playscore=0
+compscore=0
+
 
 def play(getplayerinput):
+    global playscore,compscore
     print (getplayerinput)
     computerchoice=random.choice(answeroptions)
     print(computerchoice)
+    if getplayerinput == computerchoice:
+        result = "It's a draw!"
+    elif (getplayerinput == "Rock" and computerchoice == "Scissors") or (getplayerinput == "Paper" and computerchoice == "Rock") or (getplayerinput == "Scissors" and computerchoice == "Paper"):
+        result = "You win"
+        playscore=playscore+1
+    else:
+        result = "Computer wins!"
+        compscore=compscore+1
+    outcome.config(text=result)
+    playerscore.config(text="Playerscore:"+ str(playscore))
+    computerscore.config(text="Computerscore:"+str(compscore))
+    playerguess.config(text="Playerguess:"+str(getplayerinput))
+    computerguess.config(text="Computerguess:"+str(computerchoice))
 
 title=Label(root,text="ROCK PAPER SCISSIORS",font=("Ariel",20),background="light grey")
 title.grid(row=0,column=1,columnspan=4,pady=5)
