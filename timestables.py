@@ -10,8 +10,8 @@ def gettable():
     tablenum=selectednum.get()
     numchoice=numberchoice.get()
     result=""
-    for i in range(numberchoice):
-        table2=tablenum*i
+    for i in range(numchoice):
+        table2=f"{tablenum} X {i} = {tablenum*i}"
         result=result+str(table2)+"\n"
     table.config(text=result)
 title=Label(root,text="Mathematical Table",background="light grey",font=("Ariel",20))
@@ -41,11 +41,11 @@ radio3=Radiobutton(root,text=30,value=30,variable=numberchoice)
 radio3.place(x=450,y=140)
 numberchoice.set(10)
 
-generate=Button(root,text="Generate")
+generate=Button(root,text="Generate",command=gettable)
 generate.place(x=220,y=200)
 
-table=Label(root,text="",command=gettable)
-table.place(x=130,y=220)
+table=Label(root,text="",font=("Ariel",12),background="light grey")
+table.place(x=220,y=230)
 
 
 root.mainloop()
